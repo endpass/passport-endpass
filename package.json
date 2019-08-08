@@ -1,0 +1,77 @@
+{
+  "name": "passport-endpass",
+  "version": "0.0.1",
+  "description": "Endpass authentication strategy for Passport.",
+  "keywords": [
+    "passport",
+    "endpass",
+    "auth",
+    "authn",
+    "authentication",
+    "identity"
+  ],
+  "files": [
+    "lib"
+  ],
+  "author": "Endpass, Inc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/endpass/passport-endpass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/endpass/passport-endpass/issues"
+  },
+  "main": "./lib",
+  "lint-staged": {
+    "*.{js,json}": [
+      "eslint --fix --quiet",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "passport-oauth2": "^1.5.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/git": "^7.0.16",
+    "chai": "^4.2.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-json": "^1.4.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.2",
+    "lint-staged": "^9.2.1",
+    "mocha": "^6.2.0",
+    "prettier": "^1.18.2"
+  },
+  "engines": {
+    "node": ">= 6.4.0"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha --reporter spec --require test/bootstrap/node test/*.test.js",
+    "lint": "eslint ./lib/**",
+    "format:prettier": "prettier --write '**/*.{js,json}'",
+    "format:eslint": "eslint --ext .json,.js lib/ --fix --quiet || exit 0",
+    "format": "yarn format:eslint && yarn format:prettier",
+    "commit": "git-cz"
+  }
+}
