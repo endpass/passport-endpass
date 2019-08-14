@@ -3,7 +3,7 @@ var passport = require('passport');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var EndpassStrategy = require('passport-endpass').Strategy;
+var EndpassStrategy = require('@endpass/passport').Strategy;
 // var EndpassStrategy = require('../../lib/strategy');
 var partials = require('express-partials');
 
