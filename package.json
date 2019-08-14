@@ -1,5 +1,5 @@
 {
-  "name": "passport-endpass",
+  "name": "@endpass/passport",
   "version": "0.0.1",
   "description": "Endpass authentication strategy for Passport.",
   "keywords": [
